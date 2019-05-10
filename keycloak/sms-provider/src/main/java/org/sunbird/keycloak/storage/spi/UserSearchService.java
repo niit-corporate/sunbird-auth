@@ -127,6 +127,7 @@ public class UserSearchService {
       HttpResponse response = client.execute(httpPost);
       Map<String, Object> map = getResponse(response);
       String token = (String) map.get("access_token");
+      logger.info("UserSearchService:getToken: get token");
       if (StringUtils.isNotBlank(token)) {
         return token;
       }

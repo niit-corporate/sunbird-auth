@@ -58,7 +58,7 @@ public abstract class AbstractPhoneFormAuthenticator extends AbstractUsernameFor
 
     UserModel user = null;
     try {
-      
+      logger.info("AbstractPhoneFormAuthenticator@validateUserAndPassword - fetch user for -" + username);
       user = SunbirdModelUtils.getUserByNameEmailOrPhone(context, username);
       
     } catch (ModelDuplicateException mde) {
